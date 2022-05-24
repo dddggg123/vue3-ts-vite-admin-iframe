@@ -1,29 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+onMounted(() => {
+  window.addEventListener('message', (event) => {
+    console.log('我执行了');
+    // let data = event.data;
+    // console.log('传递的信息:' + JSON.stringify(data));
+  })
+})
 </script>
 
 <template>
-  <div>{{msg}}</div>
+  <div class="iframe-container">
+    <p>{{ msg }}</p>
+  </div>
 </template>
 
-<style scoped>
-a {
-  color: #42b983;
-}
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
+<style lang="scss" scoped>
+.iframe-container {
+  height: 100%;
+  overflow: hidden;
 }
 </style>

@@ -11,6 +11,6 @@ export default defineConfig(({ mode }) => {
       port: 7000,
       open: true
     },
-    base: env.VITE_APP_BASE
+    base: './'
   }
 })

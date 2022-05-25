@@ -4,11 +4,11 @@ import { ref, onMounted } from 'vue'
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+const content = ref('主应用传递的信息:');
 onMounted(() => {
   window.addEventListener('message', (event) => {
-    console.log('我执行了');
-    // let data = event.data;
-    // console.log('传递的信息:' + JSON.stringify(data));
+    content.value = '主应用传递的信息:';
+    content.value = content.value + event.data;
   })
 })
 </script>
@@ -16,6 +16,7 @@ onMounted(() => {
 <template>
   <div class="iframe-container">
     <p>{{ msg }}</p>
+    <p>{{ content }}</p>
   </div>
 </template>
 

@@ -5,7 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <HelloWorld msg="这里是iframe界面" />
+  <HelloWorld msg="这里是iframe子应用" />
 </template>
 
 <style>

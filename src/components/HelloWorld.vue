@@ -8,7 +8,7 @@ const param = ref('');
 const content = ref('主应用传递的信息:');
 
 // 生产环境域名地址
-const iframeSrc = 'http://www.xkxk.tech/micro/iframe';
+const iframeSrc = 'https://www.xkxk.tech/micro/iframe';
 
 onMounted(() => {
   window.addEventListener('message', (event) => {
